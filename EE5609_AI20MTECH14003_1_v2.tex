@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{flushleft}	
+\textbf{Problem Statement:} \\
+\textit{To verify whether the lines passing through the given set of points are parallel or not} \vspace{5mm}
+
+\textbf{Solution-1}
+\textit{Using the vector representation} \\
+Let $A(a_1, a_2, a_3)$ = A(4, 7, 8) and $B(b_1, b_2, b_3)$ = B(2, 3, 4) \\
+Let $C(c_1, c_2, c_3)$ = C(-1, -2, 1) and $D(d_1, d_2, d_3)$ = D(1, 2, 5)
+
+\textbullet{Compute the direction vector for a given set of points}
+\begin{align*}
+v_1 = (b_1-a_1, b_2-a_2, b_3-a_3) = (-2, -4, -4) \quad ...(1) \\
+v_2 = (d_1-c_1, d_2-c_2, d_3-c_3) = (2, 4, 4) \quad ...(2)
+\end{align*}
+
+\textbullet{Check whether $v_1$ is scalar multiple of the vector $v_2$}\\
+Here, from (1) and (2), $v_2 = -1 . v_1$
+
+\textbf{Hence, the lines are parallel} \\
+\vspace{5mm}
+\textbf{Solution-2} \textit{Using the matrix representation and rank basis}	
+Represent the direction vectors in the matrix form: 
+
+$i.e., M = [v1 v2]^T$
+$$
+M =
+\begin{bmatrix}
+	-2 & -4 & -4\\
+	 2 &  4 &  4
+\end{bmatrix}
+$$
+
+Perform: R2 = R1 + R2 = \textbf{0} \\
+Hence, Row reduced echelon matrix is:
+$$
+M = 
+\begin{bmatrix}
+	-2 & -4 & -4\\
+	 0 &  0 &  0
+\end{bmatrix}
+$$
+Here, the rank of the matrix is 1. This implies that the lines are parallel.\\
+\vspace{5mm}
+\textbf{Solution-3} \textit{Using the cross product of vectors}\\
+\textbullet{Compute the cross product of the directional vectors}
+$$
+\textit{det(M)}= 
+\begin{vmatrix}
+ i &  j &  k \\
+-2 & -4 & -4 \\
+ 2 &  4 &  4
+\end{vmatrix}
+$$
+ = i(-16 + 16) - j(-8+8) + k(-8+8)\\
+ = (0, 0, 0)
+The zero vector infers that the lines are parallel.
+
+\end{flushleft}
+
+\end{document}
