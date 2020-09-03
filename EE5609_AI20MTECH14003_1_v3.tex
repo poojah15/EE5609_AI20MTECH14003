@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, mathtools}
+\usepackage{extarrows}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+
+\begin{document}
+\begin{flushleft}	
+\textbf{Problem Statement:} \\
+\textit{To verify whether the lines passing through the given set of points are parallel or not} \vspace{5mm}
+
+\textbf{Solution-1}
+\textit{Using the vector representation} \\
+Given the points, $A = \begin{pmatrix} 4\\	7\\	8\end{pmatrix}, 
+                   B = \begin{pmatrix} 2\\ 3\\ 4 \end{pmatrix}, and \quad
+                   C = \begin{pmatrix} -1\\ -2\\ 1 \end{pmatrix}, 
+                   D = \begin{pmatrix} 1\\ 2\\ 5 \end{pmatrix} $
+
+
+\textbullet{Compute the direction vector for the given set of points}
+\begin{align}
+B-A = \begin{pmatrix} -2\\ -4\\ -4 \end{pmatrix}   \\
+D-C = \begin{pmatrix}  2\\  4\\  4 \end{pmatrix}  
+\end{align}
+
+\textbullet{Check whether one of the direction vector is the scalar multiple of the other direction vector}\\
+Here, from (1) and (2), $B-A = k (D-C)$. In this example, k = -1.
+\textbf{Hence, the lines are parallel.}\\
+\vspace{5mm}
+\textbf{Solution-2} \textit{Using the matrix representation and rank of a matrix}\\
+Represent the direction vectors in the matrix form and perform row reduction: 
+\begin{align*}
+i.e., M = (B-A \quad D-C)^T \\
+M = \begin{pmatrix}
+	-2 & -4 & -4\\
+	 2 &  4 &  4
+    \end{pmatrix}
+\xleftrightarrow{R_2 \leftarrow R_1+R_2}
+\begin{pmatrix}
+	-2 & -4 & -4\\
+	 0 &  0 &  0
+\end{pmatrix}
+\end{align*}
+
+Here, the rank of the matrix is 1. This implies that the lines are parallel.\\
+\vspace{5mm}
+\textbf{Solution-3} \textit{Using the cross product of the vectors}\\
+\textbullet{Compute the cross product of the direction vectors}\\
+The cross product of the direction vectors given in (1) and (2) is: 
+\begin{align*}
+\begin{pmatrix} -2\\ -4\\ -4 \end{pmatrix} X
+\begin{pmatrix}  2\\  4\\  4 \end{pmatrix} =
+\begin{pmatrix}
+ -16 + 16 \\
+ -8+8 \\
+ -8+8\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+0\\
+\end{pmatrix}
+\end{align*}
+
+The zero vector infers that the lines are parallel.\\
+\vspace{5mm}
+\textbf{Solution-4} 
+Let the lines be parallel and the first two points pass through $n^T\textbf{x} = \textbf{c}$
+i.e.
+\begin{align}
+n^Tx1=c1 => x1^Tn = c1, \quad
+n^Tx2=c2 => x2^Tn = c2
+\end{align}
+and the second two points pass through $n^T\textbf{x} = \textbf{c}$
+Then
+\begin{align}
+n^Tx3=c3 => x3^Tn = c3, \quad
+n^Tx4=c4 => x4^Tn = c4
+\end{align}
+Putting equations (3) and (4) together, we obtain
+\begin{align}
+\myvec{x1^T\\x2^T\\x3^T\\x4^T}\vec{n} = \myvec{c1\\c2\\c3\\c4}
+\end{align}
+Now if this equation has a solution, then $\vec{n}$ exists and the lines will be parallel.
+\end{flushleft}
+\end{document}
