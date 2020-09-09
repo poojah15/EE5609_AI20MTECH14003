@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep  9 22:58:49 2020
+Created on Wed Sep  9 13:01:05 2020
 
-@author: Pooja H 
-AI20MTECH14003
+@author: pooja
 """
 
 #%%
