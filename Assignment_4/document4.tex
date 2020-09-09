@@ -166,22 +166,22 @@
 	
 \section{Theory}
 	The determinant of a matrix of order three can be determined by expressing it in terms of second order determinants and is called expansion of a determinant along either a row or column.
-	Consider a determinant of square matrix A = $[a_{ij}]_{3x3}$
+	Consider a determinant of square matrix $\vec{A} = [a_{ij}]_{3x3}$
 	\begin{align}
-		i.e.,  \mydet{A} = \mydet{a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23}\\ a_{31} & a_{32} & a_{33}}
+		i.e.,  \mydet{\vec{A}} = \mydet{a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23}\\ a_{31} & a_{32} & a_{33}}
 	\end{align}
-Now, the expansion of determinant of A that is, $\mydet{A}$ can be written as 
+Now, the expansion of determinant of $\vec{A}$ that is, $\mydet{\vec{A}}$ can be written as 
 \begin{align}
-	\mydet{A} &= (-1)^{1+1} a_{11} \mydet{a_{22} & a_{23}\\a_{32} & a_{33}} + (-1)^{1+2} a_{12} \mydet{a_{21} & a_{23}\\a_{31} & a_{33}} \nonumber \\ 
+	\mydet{\vec{A}} &= (-1)^{1+1} a_{11} \mydet{a_{22} & a_{23}\\a_{32} & a_{33}} + (-1)^{1+2} a_{12} \mydet{a_{21} & a_{23}\\a_{31} & a_{33}} \nonumber \\ 
 	&+ (-1)^{1+3} a_{13} \mydet{a_{21} & a_{22}\\a_{31} & a_{32}}\\
 	or \nonumber\\
-	\mydet{A} &= a_{11}(a_{22}a_{33} - a_{32}a_{23}) - a_{12}(a_{21}a_{33} - a_{31}a_{23}) \nonumber \\
+	\mydet{\vec{A}} &= a_{11}(a_{22}a_{33} - a_{32}a_{23}) - a_{12}(a_{21}a_{33} - a_{31}a_{23}) \nonumber \\
 	&+ a_{13}(a_{21}a_{32} - a_{31}a_{22})
 \end{align}
 Generally, the properties of determinants are used while evaluating the determinant. We have used row/column reduction method and then compute the determinant of a matrix.
 \section{Solution}
 \begin{align}
-	Given, \mydet{A} = \mydet{x & y & x+y\\ y & x+y & x\\ x+y & x &y}\\
+	Given, \mydet{\vec{A}} = \mydet{x & y & x+y\\ y & x+y & x\\ x+y & x &y}\\
 	\xleftrightarrow{ R_1 \leftarrow R_1 + R_2 + R_3} \mydet{2(x + y) & 2(x + y) & 2(x + y)\\ y & x+y & x\\ x+y & x &y}\\
 	= 2(x + y)\mydet{1 & 1 & 1\\ y & x+y & x\\ x+y & x &y}\\
 	\xleftrightarrow[C_3 \leftarrow C_3 - C_1]{C_2 \leftarrow C_2 - C_1}
