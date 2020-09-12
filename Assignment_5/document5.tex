@@ -4,8 +4,6 @@
 \usepackage{gensymb}
 
 \singlespacing
-\include{graphics}
-\include{picture1.tex}
 \usepackage{pstricks}
 \usepackage[cmex10]{amsmath}
 %\usepackage{amsthm}
@@ -183,32 +181,22 @@ Let ABC and ABD are the given triangles with the same base AB and between the sa
 \begin{figure}[!ht]
 \centering
 \resizebox{\columnwidth}{!}{\input{picture1.tex}}
-\caption{Triangles on same base}
+\caption{Triangles on same base} 
 \end{figure}\\
-Form a parallelogram, say ABFC, by extending the triangle ABC and ABED by extending the triangle ABD. The parallelograms lie on the same base AB and between the same parallel lines AB and CD.\\
-Let AB = $\vec{a}$ and AC = $\vec{b}$.\\
-Hence, the area of \parallelogram ABFC is given by
+Let AB = $\vec{a}$ and AC = $\vec{b}$. Also the lines AB and CD are parallel, which implies that CD = k $\times$ AB.
+Here, the area of $\triangle$ ABC is given by
 \begin{align} 
-	(AB \times AC) = \vec{a} \times \vec{b} \label{eq:eq1}
+	  Area(\triangle ABC) = \frac{1}{2}(\vec{a} \times \vec{b})\label{eq:eq1}
 \end{align}
-
-Similarly, the area of \parallelogram ABED is given by
+And, the area of $\triangle$ ABD is given by
 \begin{align}
-	(AB \times AD) &= (\vec{a} \times (AC + CD))\\
-	&= (\vec{a} \times  (\vec{b} + k\vec{a}))\\
-	&= (\vec{a} \times  \vec{b}) + (\vec{a} \times  k\vec{a})\\
-	&= (\vec{a} \times  \vec{b}) + k (\vec{a} \times  \vec{a})\\
-	&= (\vec{a} \times  \vec{b})  \quad [\because \vec{a} \times  \vec{a} =0] \label{eq:eq2}
+	\frac{1}{2}(AB \times AD) &= (\vec{a} \times (AC + CD))\\
+	&= \frac{1}{2}(\vec{a} \times  (\vec{b} + k\vec{a}))\\
+	&= \frac{1}{2}(\vec{a} \times  \vec{b}) + (\vec{a} \times  k\vec{a})\\
+	&= \frac{1}{2}(\vec{a} \times  \vec{b}) + k (\vec{a} \times  \vec{a})\\
+	Area(\triangle ABD)&= \frac{1}{2}(\vec{a} \times  \vec{b})  \quad [\because \vec{a} \times  \vec{a} =0] \label{eq:eq2}
 \end{align}
-From \eqref{eq:eq1} and \eqref{eq:eq2}, we can infer that the area of \parallelogram ABFC = area of \parallelogram ABED.
-We know that the area of triangle is half the area of the parallelogram.
-Therefore,\\
-Area of $\triangle$ ABC = $\frac{1}{2}$ (Area of \parallelogram ABFC)
-\begin{align} \label{eq:eq3}
-= \frac{1}{2} (\vec{a} \times \vec{b})\end{align}
-Area of $\triangle$ ABD = $\frac{1}{2}$ (Area of \parallelogram ABED) 
-\begin{align} \label{eq:eq4}
-	= \frac{1}{2} (\vec{a} \times \vec{b}).\end{align}
-From \eqref{eq:eq3} and \eqref{eq:eq4}, it is proved that the triangles on the same base and between the same parallels are equal in area.
+From \eqref{eq:eq1} and \eqref{eq:eq2}, we can infer that the area of two triangles are one and the same.
+Hence, it is proved that the triangles on the same base and between the same parallels are equal in area.
 
 \end{document}
