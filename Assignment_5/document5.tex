@@ -178,11 +178,12 @@ Prove that the triangles on the same base (or equal bases) and between the same 
 \section{Solution}
 Let ABC and ABD are the given triangles with the same base $\vec{AB}$ and between the same parallel lines $\vec{AB}$ and $\vec{CD}$.
 \renewcommand{\thefigure}{1}
-\begin{figure}[!ht]
+\begin{figure}[!ht] \label{fig:two_triangles}
 \centering
 \resizebox{\columnwidth}{!}{\input{picture1.tex}}
-\caption{Triangles on same base} 
-\end{figure}\\
+\caption{Triangles on same base}
+\end{figure}
+
 The area of $\triangle$ ABC is given by
 \begin{align} 
 	  Area(\triangle ABC) &= \frac{1}{2}\norm{(\vec{A} - \vec{B}) \times (\vec{A} - \vec{C})}\label{eq:eq1}
@@ -191,11 +192,11 @@ Since $\vec{CD} \parallel \vec{AB}$,
 \begin{align}\label{eq:fact1} \vec{C-D} = k(\vec{A-B})\end{align}
 Hence, the area of $\triangle$ ABD is given by
 \begin{align}
-	Area(\triangle ABD)&=\frac{1}{2}\norm{\brak{\vec{A}-\vec{B}} \times \brak{\vec{A}-\vec{D}}}\\ 
-	&= \frac{1}{2}\norm{(\vec{A}-\vec{B}) \times \cbrak{\brak{\vec{A}-\vec{C}} + \brak{\vec{C}-\vec{D}}}}\\
-	&= \frac{1}{2}\norm{(\vec{A}-\vec{B}) \times  \cbrak{(\vec{A}-\vec{C}) + k(\vec{A}-\vec{B})}}\\
-	&= \frac{1}{2}\norm{(\vec{A}-\vec{B})\times(\vec{A} - \vec{C})+k(\vec{A}-\vec{B})\times(\vec{A}-\vec{B})}\\
-	Area(\triangle ABD)&= \frac{1}{2}\norm{(\vec{A}-\vec{B})\times(\vec{A} - \vec{C})} \quad [\because \vec{A} \times  \vec{A} =0] \label{eq:eq2}
+Area(\triangle ABD)	=\frac{1}{2}\norm{\brak{\vec{A}-\vec{B}} \times \brak{\vec{A}-\vec{D}}}\\ 
+=\frac{1}{2}\norm{(\vec{A}-\vec{B}) \times \cbrak{\brak{\vec{A}-\vec{C}} + \brak{\vec{C}-\vec{D}}}}\\
+=\frac{1}{2}\norm{(\vec{A}-\vec{B}) \times  \cbrak{(\vec{A}-\vec{C}) + k(\vec{A}-\vec{B})}}\\
+=\frac{1}{2}\norm{(\vec{A}-\vec{B})\times(\vec{A}-\vec{C})+k(\vec{A}-\vec{B})\times (\vec{A}-\vec{B})}\\
+Area(\triangle ABD)=\frac{1}{2}\norm{(\vec{A}-\vec{B})\times(\vec{A} - \vec{C})}[\because \vec{A} \times \vec{A} =0] \label{eq:eq2}
 \end{align}
 From \eqref{eq:eq1} and \eqref{eq:eq2}, we can infer that the area of two triangles are one and the same.
 Hence, it is proved that the triangles on the same base and between the same parallels are equal in area.
