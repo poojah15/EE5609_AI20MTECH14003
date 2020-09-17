@@ -178,7 +178,7 @@ Find the value of k such that $6x^2 + 11xy - 10y^2 + x + 31y + k =0$ represent p
 \section{Theory}
 The general equation of second degree is given by 
 \begin{align} 
-	ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0 
+	ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0 \label{eq:geneq}
 \end{align}
 and can be expressed as 
 \begin{align}
@@ -197,36 +197,73 @@ Let the pair of straight lines be given by
 Equating their product with \eqref{eq:eq1}, we get
 \begin{align}
 	(\vec{n}_1^T\vec{x} - c_1)(\vec{n}_2^T\vec{x} - c_2) \nonumber \\
-	\implies \vec{x}^T\vec{Vx} + 2\vec{u}^T\vec{x} + f = 0 \label{eq:eq4}
+	= \vec{x}^T\vec{Vx} + 2\vec{u}^T\vec{x} + f = 0 \label{eq:eq4} \\
+	\implies \vec{n}_1 * \vec{n}_2 &= \cbrak{a, 2b, c} \label{eq:n1n2} \\
+	c_2\vec{n}_1 + c_1\vec{n}_2 &= -2\vec{u} \label{eq:cneq} \\
+	c_1c_2 &= f \label{eq:c1c2}
 \end{align}
-\eqref{eq:eq4} represents a pair of straight lines if
-\begin{align} \label{eq:det1}
-	\mydet{\vec{V} & \vec{u} \\ \vec{u}^T & f} = 0
+The slopes of lines are given by the roots of the polynomial
+\begin{align}
+	cm^2 + 2bm + a = 0 \label{eq:poly}\\
+	\implies m_i = \frac{-b \pm \sqrt{- \mydet{\vec{V}}}}{c} \label{eq:mval}
+\end{align}
+and
+\begin{align}
+	\vec{n}_i = k_i \myvec{-m_i \\ 1},  \quad i = 1,2. \label{eq:nval}
+\end{align}
+From \eqref{eq:cneq},
+\begin{align}
+	\myvec{\vec{n}_1 & \vec{n}_2} \myvec{c_2 \\ c_1} = -2\vec{u} \label{eq:result}
 \end{align}
 \section{Solution}
 Given, 
 \begin{align}
 	6x^2 + 11xy - 10y^2 + x + 31y + k =0 \label{eq:eq5}
 \end{align}
-Equating  \eqref{eq:eq5} to \eqref{eq:eq1}, we get
+Substituting the coefficients of equation \eqref{eq:eq5} in \eqref{eq:eq2}, \eqref{eq:eq3} and \eqref{eq:poly}, we get
 \begin{align}
-	\vec{V} = \myvec{6 & \frac{11}{2} \\ \frac{11}{2} & -10}\\
-	\vec{u}^T = \myvec{\frac{1}{2} & \frac{31}{2}}
+	\vec{V} &= \myvec{6 & \frac{11}{2} \\ \frac{11}{2} & -10}\\
+	\vec{u}^T &= \myvec{\frac{1}{2} & \frac{31}{2}} \\
+	-10m^2 + 11m + 6 &= 0
 \end{align}
-Substituting $\vec{V}$ and $\vec{u}^T$ in \eqref{eq:det1}, we obtain
+Solving for m by using \eqref{eq:mval}, we get
 \begin{align}
-\mydet{6 & \frac{11}{2} & \frac{1}{2} \\ \frac{11}{2} & -10 & \frac{31}{2} \\ \frac{1}{2} & \frac{31}{2} & k} = 0 \\
-\implies 6\brak{-10k - \brak{\frac{31}{2}}^2}-\frac{11}{2}\brak{\frac{11}{2}k - \frac{31}{4}} \nonumber\\+ \frac{1}{2}\brak{\frac{11}{2}\times\frac{31}{2} +5} = 0\\
-\implies \frac{-361}{4}k - \frac{5415}{4} = 0\\
-\implies \boxed{k = -15} \label{eq:res}
+	m &= \frac{\frac{-11}{2} \pm \frac{19}{2}}{-10} \\ 
+	\implies m_1 &= \frac{-2}{5}, m_2 = \frac{3}{2} 
 \end{align}
-Substituting \eqref{eq:res} in \eqref{eq:eq5}, we get
+From \eqref{eq:nval}, we have
 \begin{align}
-	6x^2 + 11xy - 10y^2 + x + 31y - 15 =0 \label{eq:reseq}
+	\vec{n}_1 &= k_1 \myvec{ \frac{2}{5} \\ 1}  \label{eq:n1val}\\
+	\vec{n}_2 &= k_2 \myvec{\frac{-3}{2} \\ 1} \label{eq:n2val}
+\end{align}
+By substituting \eqref{eq:n1val} and \eqref{eq:n2val} in \eqref{eq:n1n2}, we get
+\begin{align}
+	k_1 \myvec{ \frac{2}{5} \\ 1} * k_2 \myvec{\frac{-3}{2} \\ 1} &= \cbrak{6, 11, -10}\\
+	\implies k_1k_2 &= -10
+\end{align} 
+By inspection, we get the values, $k_1 = 5, k_2 = -2$. Substituting the values of $k_1$ and $k_2$ in \eqref{eq:n1val} and \eqref{eq:n2val} respectively, we get
+\begin{align}
+	\vec{n}_1 &= \myvec{2 \\ 5} \label{eq:n1}\\
+	\vec{n}_2 &= \myvec{3 \\ -2} \label{eq:n2}
+\end{align}
+Substituting \eqref{eq:n1} and \eqref{eq:n2} in \eqref{eq:result}, we get
+\begin{align}
+       \myvec{2 & 3\\ 5 & -2}\myvec{c_2 \\ c_1} &= -2\myvec{\frac{1}{2} \\ \frac{31}{2}}\\
+       \implies 2c_2 + 3c_1 &= -1\\
+       5c_2 - 2c_1 &= -31
+\end{align}
+Solving the above equations, we get
+\begin{align}
+	c_1 = 3, c_2 = -5
+\end{align}
+$\therefore$ From \eqref{eq:c1c2}, we get
+\begin{align}
+	f = -15\\
+	i.e., \boxed{k = -15} \label{eq:kval}
 \end{align}
 Hence the solution.
 \section{Graphical Illustration}
-Firstly, obtain linear equation of the form ($ax + by + c$) of \eqref{eq:reseq} by considering
+From \eqref{eq:eq5}, let us consider
 \begin{align}
 	6x^2 + 11xy - 10y^2 \\
 	\implies 6x^2 - 4xy + 15xy - 10y^2\\
@@ -235,24 +272,24 @@ Firstly, obtain linear equation of the form ($ax + by + c$) of \eqref{eq:reseq} 
 \end{align}
 Equation \eqref{eq:factor} can be written as,
 \begin{align}
-	(3x - 2y + m)(2x + 5y + n) &= 0 \label{eq:mn} \\
-	\implies 6x^2 + 11xy - 10y^2 + (3n + 2m)x \nonumber \\+ (-2n + 5m)y &= 0 \label{eq: eqmn}
+	(3x - 2y + p)(2x + 5y + q) &= 0 \label{eq:pq} \\
+	\implies 6x^2 + 11xy - 10y^2 + (3q + 2p)x \nonumber \\+ (-2q + 5p)y &= 0 \label{eq: eqpq}
 \end{align}
-Equating \eqref{eq:reseq} and \eqref{eq: eqmn},
+Equating \eqref{eq:eq5} and \eqref{eq: eqpq}, we get
 \begin{align}
-	3n + 2m &= 1\\
-	-2n + 5m &= 31
+	3q + 2p &= 1\\
+	-2q + 5p &= 31
 \end{align}
-Solving for m and n we obtain,
+Solving for p and q we obtain,
 \begin{align}
-	m &= 5 \label{eq:mval} \\
-	n &= -3 \label{eq:nval}
+	p &= 5 \label{eq:p_val} \\
+	q&= -3 \label{eq:q_val}
 \end{align}
-Substituting \eqref{eq:mval} and \eqref{eq:nval} in \eqref{eq:mn}, we obtain
+Substituting the values of p and q in \eqref{eq:pq}, we obtain
 \begin{align}
 	(3x - 2y + 5)(2x + 5y - 3) = 0 \label{eq:finalres}
 \end{align}
-Hence \eqref{eq:finalres} represent equation of two straight lines.
+Hence \eqref{eq:finalres} represents equation of two straight lines.
 Graphically,
 \renewcommand{\thefigure}{\arabic{figure}}
 \begin{figure}[!ht] \label{fig:straight_lines}
