@@ -246,6 +246,15 @@ By inspection, we get the values, $k_1 = 5, k_2 = -2$. Substituting the values o
 	\vec{n}_1 &= \myvec{2 \\ 5} \label{eq:n1}\\
 	\vec{n}_2 &= \myvec{3 \\ -2} \label{eq:n2}
 \end{align}
+From \eqref{eq:n1n2}, we know that,
+\begin{align}
+	\vec{n}_1 * \vec{n}_2 = \myvec{a\\ 2b\\ c}
+\end{align}	
+Using Teoplitz matrix representation, the convolution of $\vec{n}_1$ with $\vec{n}_2$, is as follows:
+\begin{align}
+	\myvec{2 & 0 & 5\\ 5 & 2 & 0\\ 0 & 5 & 2}\myvec{3\\-2\\0} = \myvec{6 \\11 \\ -10} = \myvec{a \\ 2b \\ c}
+\end{align}
+Hence, $\vec{n}_1$ and $\vec{n}_2$ satisfies \eqref{eq:n1n2}.
 Substituting \eqref{eq:n1} and \eqref{eq:n2} in \eqref{eq:result}, we get
 \begin{align}
        \myvec{2 & 3\\ 5 & -2}\myvec{c_2 \\ c_1} &= -2\myvec{\frac{1}{2} \\ \frac{31}{2}}\\
@@ -262,34 +271,6 @@ $\therefore$ From \eqref{eq:c1c2}, we get
 	i.e., \boxed{k = -15} \label{eq:kval}
 \end{align}
 Hence the solution.
-\section{Graphical Illustration}
-From \eqref{eq:eq5}, let us consider
-\begin{align}
-	6x^2 + 11xy - 10y^2 \\
-	\implies 6x^2 - 4xy + 15xy - 10y^2\\
-	\implies 2x(3x - 2y) + 5y(3x - 2y)\\
-	\implies (3x - 2y)(2x + 5y) \label{eq:factor}
-\end{align}
-Equation \eqref{eq:factor} can be written as,
-\begin{align}
-	(3x - 2y + p)(2x + 5y + q) &= 0 \label{eq:pq} \\
-	\implies 6x^2 + 11xy - 10y^2 + (3q + 2p)x \nonumber \\+ (-2q + 5p)y &= 0 \label{eq: eqpq}
-\end{align}
-Equating \eqref{eq:eq5} and \eqref{eq: eqpq}, we get
-\begin{align}
-	3q + 2p &= 1\\
-	-2q + 5p &= 31
-\end{align}
-Solving for p and q we obtain,
-\begin{align}
-	p &= 5 \label{eq:p_val} \\
-	q&= -3 \label{eq:q_val}
-\end{align}
-Substituting the values of p and q in \eqref{eq:pq}, we obtain
-\begin{align}
-	(3x - 2y + 5)(2x + 5y - 3) = 0 \label{eq:finalres}
-\end{align}
-Hence \eqref{eq:finalres} represents equation of two straight lines.
 Graphically,
 \renewcommand{\thefigure}{\arabic{figure}}
 \begin{figure}[!ht] \label{fig:straight_lines}
