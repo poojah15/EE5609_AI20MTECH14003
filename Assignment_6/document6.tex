@@ -180,18 +180,15 @@ Given,
 \begin{align}
 	6x^2 + 11xy - 10y^2 + x + 31y + k =0 \label{eq:eq5}
 \end{align}
-Equating to the general equation of second degree 
+From \eqref{eq:eq5} we get,
 \begin{align}
-	i.e.,  ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0 \label{eq:geneq}
-\end{align}
-we get,
-\begin{align}
-	a = 6, b = \frac{11}{2}, c = -10, d = \frac{1}{2}, e = \frac{31}{2}, f = k
+	\vec{V} &= \myvec{6 & \frac{11}{2} \\ \frac{11}{2} & -10}\\
+	\vec{u} &= \myvec{\frac{1}{2}\\ \frac{31}{2}}\\
+	f &= k
 \end{align}
 Compute the slopes of lines given by the roots of the polynomial $-10m^2 + 11m + 6$
 \begin{align}
-   i.e., m_i &= \frac{-b \pm \sqrt{- \mydet{\vec{V}}}}{c},  where 
-  \vec{V} = \myvec{a & b\\b & c} \label{eq:eq2} \\
+   i.e., m_i &= \frac{-b \pm \sqrt{- \mydet{\vec{V}}}}{c} \label{eq:eq2} \\
    \implies m &= \frac{\frac{-11}{2} \pm \frac{19}{2}}{-10} \\ 
    \implies m_1 &= \frac{-2}{5}, m_2 = \frac{3}{2} 
 \end{align} 
@@ -227,10 +224,6 @@ Hence, $\vec{n}_1$ and $\vec{n}_2$ satisfies \eqref{eq:n1n2}.
 We have,
 \begin{align}
 	c_2\vec{n}_1 + c_1\vec{n}_2 &= -2\vec{u} \label{eq:cneq}
-\end{align}
-where
-\begin{align}
-	\vec{u} = \myvec{d \\ e}
 \end{align}
 Substituting \eqref{eq:n1}, \eqref{eq:n2} in \eqref{eq:cneq}, we get
 \begin{align}
