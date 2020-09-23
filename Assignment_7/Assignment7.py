@@ -15,8 +15,8 @@ sys.path.insert(0, '/storage/emulated/0/tlc/school/ncert/linman/codes/CoordGeo')
 #setting up plot
 fig = plt.figure()
 ax = fig.add_subplot(111, aspect='equal')
-len = 100
-y = np.linspace(-8,8,len)
+len = 200
+y = np.linspace(-5,5,len)
 #hyper parameters
 V = 1/2*np.array(([0,1],[1,0]))
 u = 1/2*np.array(([0,-1]))
@@ -41,7 +41,7 @@ xStandardHyperRight = np.vstack((x,y))
 #Affine Parameters
 c = -Vinv@u
 #print(c)
-R =  np.array(([0,1],[1,0]))
+R =  np.array(([0,1/2],[1/2,0]))
 ParamMatrix = np.array(([a,0],[0,b]))
 
 #Generating the eigen hyperbola
