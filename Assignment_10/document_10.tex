@@ -150,6 +150,12 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+\newenvironment{amatrix}[1]{%
+	\left(\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right)
+}
+
 \begin{abstract}
 In this document, we present the solution to $\vec{AX} = c\vec{X}$
 \end{abstract}
@@ -184,19 +190,19 @@ Finding the corresponding eigenvalues and eigenvectors:
 \end{align}
 From \eqref{eq:gen}, we get
 \begin{align}
-	\myvec{0 & 0 & 0\\ 1 & 0 & 0\\0 & 1 & 0}\vec{X} = 0
+	\myvec{0 & 0 & 0\\ 1 & 0 & 0\\0 & 1 & 0}\myvec{\vec{x}_1 \\ \vec{x}_2 \\ \vec{x}_3} = \myvec{0 \\ 0 \\ 0}
 \end{align}
 Solving the homogeneous system of linear equations by performing rref, we get
 \begin{align}
-	\myvec{0 & 0 & 0 & |0\\1 & 0 & 0 & |0\\0 & 1 & 0 & |0 }
+	\begin{amatrix}{3}
+		0 & 0 & 0 & 0\\ 1& 0 & 0 & 0\\ 0 & 0 & 0 & 0
+	\end{amatrix}  
 	\xleftrightarrow[R_3 \xleftrightarrow{} R_2]{R_2 \xleftrightarrow{} R_1}
-	\myvec{1 & 0 & 0 & |0\\ 0 & 1 & 0 & |0\\0 & 0 & 0 & |0 }
+	\begin{amatrix}{3}
+		1 & 0 & 0 & 0\\ 0& 1 & 0 & 0\\ 0 & 0 & 0 & 0
+	\end{amatrix}
 \end{align}
-Now solving the matrix equation,
-\begin{align}
-		\myvec{1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 0}\myvec{\vec{x}_1 \\ \vec{x}_2 \\ \vec{x}_3} = \myvec{0 \\ 0 \\ 0}
-\end{align}
-We get,
+Hence we get,
 \begin{align}
 	\vec{x}_1 = 0, \vec{x}_2 = 0, \vec{x}_3 = t
 \end{align}
