@@ -181,12 +181,16 @@ To find $\vec{X}$ such that $\vec{AX} = c \vec{X}$, consider
 	(\vec{AX} - c\vec{X}) = 0\\
     \implies (\vec{A} - c\vec{I})\vec{X} = 0 \label{eq:gen}
 \end{align}
-Finding the corresponding eigenvalues and eigenvectors:
+The characteristic polynomial for the matrix $\vec{A}$ is given by,
 \begin{align}
 	\det{(\vec{A} - c\vec{I})} &= 0\\
 	\implies \mydet{5 - c & 0 & 0\\ 1 & 5 - c & 0\\0 & 1 & 5 - c} &= 0\\
-	\implies c &= 5\\
-	\therefore \vec{A} - c\vec{I} &= \myvec{0 & 0 & 0\\ 1 & 0 & 0\\0 & 1 & 0}
+	\implies -c^3 + 15c^2 - 75c +125 &= 0\\
+	\implies c_1 = 5, c_2 = 5, c_3 = 5
+\end{align}
+Also, since the matrix is triangular, the eigenvalues are the elements in the  principal diagonal. Hence $c_1 = 5, c_2 = 5, c_3 = 5$. To find the corresponding eigenvector, consider the following
+\begin{align}
+	 \vec{A} - 5\vec{I} &= \myvec{0 & 0 & 0\\ 1 & 0 & 0\\0 & 1 & 0}
 \end{align}
 From \eqref{eq:gen}, we get
 \begin{align}
@@ -206,10 +210,15 @@ Hence we get,
 \begin{align}
 	x_1 = 0, x_2 = 0, x_3 = t
 \end{align}
-where, $t$ is some constant.
+where, $x_3$ is arbitrary.
 Therefore,
 \begin{align}
-	\vec{X} = \myvec{0 \\ 0 \\ t} = \myvec{ 0 \\ 0 \\ 1}t
+	\vec{X} = \myvec{0 \\ 0 \\ t}
 \end{align}
-Hence for $\vec{X} = \myvec{ 0 \\ 0 \\ 1}$, there exists a scalar $c = 5$ such that $\vec{AX} = c \vec{X}$.
+Thus the possible eigenvectors are
+\begin{align}
+	\myvec{0\\0\\-1}, \myvec{0\\0\\1}, \myvec{0\\0\\2} \quad \dots 
+\end{align}
+Here, we cannot find 3 independent eigenvectors corresponding to 3 eigenvalues as the eigenvalues are repeated.
+Also, if we try to form the modal matrix  P from any three of these eigenvectors i.e., $\vec{P} = \myvec{0 & 0 & 0\\ 0 & 0 & 0\\ -1 & 1 & 2}$, it will have determinant zero. Thus $P^{-1}$ doesn't exist and hence the given matrix is not diagonalizable. 
 \end{document}
