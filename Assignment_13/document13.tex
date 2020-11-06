@@ -184,20 +184,22 @@ Let $\vec{V}$ and $\vec{W}$ be the vector spaces.  The function $T : \vec{V} \ri
 \end{align}
 Given, 
 \begin{align}
-	T(x_1, x_2)  = (x_1 - x_2, 0)
+	T \myvec{x_1 \\x_2}  = \myvec{1 & -1\\0 & 0} \myvec{x_1 \\ x_2}
 \end{align}
-Suppose we have $\vec{x} = (\vec{x}_1, \vec{x}_2)$ and $\vec{y} = (\vec{y}_1, \vec{y}_2)$, then we have to show that the result of $T(\vec{x}+\vec{y})$ must be same as $T(\vec{x}) + T(\vec{y})$. Consider,
+Suppose we have $\vec{x} = \myvec{x_1\\x_2}$ and $\vec{y} = \myvec{y_1\\ y_2}$, then we have to show that the result of $T(\vec{x}+\vec{y})$ must be same as $T(\vec{x}) + T(\vec{y})$. Consider,
 \begin{align}
-	T(\vec{x} + \vec{y}) &= T(\vec{x}_1 + \vec{y}_1, \vec{x}_2 + \vec{y}_2)\\
-	&= (\vec{x}_1 + \vec{y}_1 - \vec{x}_2 - \vec{y}_2, 0 )\\
-	&= (\vec{x}_1 - \vec{x}_2, 0) + (\vec{y}_1 - \vec{y}_2, 0)\\
-    T(\vec{x} + \vec{y})	&= T(\vec{x}) + T(\vec{y})
+	T(\vec{x} + \vec{y}) &= T\myvec{x_1 + y_1\\ x_2 + y_2}\\
+	&= \myvec{1  & -1\\0 & 0}\myvec{x_1 + y_1 \\ x_2 + y_2}\\
+	&= \myvec{x_1 + y_1 - x_2 - y_2\\0}\\
+    &= \myvec{x_1 - x_2\\0} + \myvec{y_1 - y_2\\0}\\
+    &=\myvec{1 & -1\\0 &0}\myvec{x_1 \\x_2} + \myvec{1 & -1\\0 &0}\myvec{y_1 \\y_2} \\
+  T(\vec{x} + \vec{y})  &= T(\vec{x}) + T(\vec{y})
 \end{align}
 Also, we need to show that for some constant $k$, $T(k\vec{x}) = kT(\vec{x})$. Consider,
 \begin{align}
-	T(k\vec{x}) &= T(k\vec{x}_1, k\vec{x}_2)\\
-	&= (k\vec{x}_1 - k\vec{x}_2, k.0)\\
-	&= k(\vec{x}_1 - \vec{x}_2, 0)\\
+	T(k\vec{x}) &= T\myvec{kx_1\\kx_2}\\
+	&= \myvec{k & -k \\0 & 0} \myvec{x_1 \\x_2}\\
+	&= k\myvec{1 & -1 \\0 & 0} \myvec{x_1 \\x_2}\\
 	T(k\vec{x}) &= kT(\vec{x})
 \end{align}
 Therefore, the given function T is a linear transformation.
