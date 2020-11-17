@@ -176,25 +176,43 @@
 	\section{Problem Statement}
 	Let $T$ be the linear operator on $\vec{R}^2$ defined by 
 	\begin{align}
-		T(x_1, x_2) = (-x_2, x_1)
+		T\myvec{x_1\\ x_2} = \myvec{-x_2\\ x_1}
 	\end{align}
-	What is the matrix of $T$ in the ordered basis $\vec{B} = \cbrak{\alpha_1, \alpha_2}$, where $\alpha_1 = (1, 2)$ and $\alpha_2 = (1, -1)$ ?
+	What is the matrix of $T$ in the ordered basis $\vec{B} = \cbrak{ \vec{ \alpha }_1, \vec{\alpha}_2}$, where $\vec{\alpha}_1 = \myvec{1\\ 2}$ and $\vec{\alpha}_2 = \myvec{1 \\ -1}$ ?
 	\section{Solution}
-	Applying the transformations on $\alpha_1$ and $\alpha_2$ we get, 
+	Let $\vec{B}'$ be the standard ordered basis for $\vec{R}^2$. Then,
 	\begin{align}
-		T(\alpha_1)  &= (-2, 1)\\
-		T(\alpha_2) &= (1, 1)
+		T(\vec{\alpha}'_1) &= T\myvec{1 \\ 0} = \myvec{0\\1} = 0\vec{\alpha}_1 + 1\vec{\alpha}_2\\
+		T(\vec{\alpha}'_2) &= T\myvec{0 \\ 1} = \myvec{-1\\0} = -1\vec{\alpha}_1 + 0\vec{\alpha}_2
 	\end{align}
-In order to write T($\alpha_1$) and T($\alpha_2$) in terms of $\alpha_1$ and $\alpha_2$, we row reduce the augmented matrix
+Hence, the matrix of $T$ in the standard ordered basis $\vec{B}'$ is
 \begin{align}
-	\myvec{1 & 1 & -2 & 1\\2 & -1 & 1 & 1} 
-	\xleftrightarrow[R_2 \leftarrow \frac{-R_2}{3}]{R_2 \leftarrow R_2 - 2R_1}
-	\myvec{1 & 1 & -2 & 1\\0 & 1 & -\frac{5}{3} & \frac{1}{3}}\\
-	\xleftrightarrow{R_1 \leftarrow R_1 - R_2}
-	\myvec{1 & 0 & -\frac{1}{3} & \frac{2}{3} \\ 0 & 1 & -\frac{5}{3} & \frac{1}{3}}
+	T_\vec{B'} = \myvec{0 & 1\\ -1 & 0}
 \end{align}
-Hence, the matrix $T$ in ordered basis $\vec{B}$ is
+Given, 
 \begin{align}
-	[T]_\vec{B} = \myvec{-\frac{1}{3} & \frac{2}{3} \\ -\frac{5}{3} & \frac{1}{3}}
-\end{align} 
+	\vec{\alpha}_1 &= \myvec{1\\ 2} \\ 
+	\vec{\alpha}_2 &= \myvec{1 \\ -1} 
+\end{align}
+Then,
+\begin{align}
+	\vec{\alpha}_1 &= 1\vec{\alpha}_1 + 2\vec{ \alpha }_2\\
+	\vec{\alpha}_2 &= 1\vec{\alpha}_1 - 1\vec{ \alpha }_2
+\end{align}		
+So the $\vec{P}$ matrix is
+\begin{align}
+	\vec{P} = \myvec{1 & 1\\ 2 & -1}
+\end{align}	
+And
+\begin{align}
+	\vec{P}^{-1} = \myvec{\frac{1}{3} & \frac{1}{3} \\ \frac{2}{3} & -\frac{1}{3}}
+\end{align}
+Hence
+\begin{align}
+	[T]_\vec{B} &= \vec{P}^{-1} [T]_\vec{B'} \vec{P}\\
+	&= \myvec{\frac{1}{3} & \frac{1}{3} \\ \frac{2}{3} & -\frac{1}{3}}\myvec{0 & 1\\ -1 & 0}\myvec{1 & 1\\ 2 & -1}\\
+	&= \myvec{-\frac{1}{3} & \frac{1}{3} \\ \frac{1}{3} & \frac{2}{3}}\myvec{1 & 1\\ 2 & -1}\\
+	[T]_\vec{B} &= \myvec{\frac{1}{3} & -\frac{2}{3} \\ \frac{5}{3} & -\frac{1}{3}}
+\end{align}	
+Hence, $[T]_\vec{B}$ is the required matrix for the given ordered basis $\vec{B}$.
 \end{document}
