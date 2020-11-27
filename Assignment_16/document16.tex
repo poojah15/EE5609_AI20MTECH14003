@@ -51,6 +51,9 @@
 \usepackage{lscape}     
 %\usepackage{multicol}
 \usepackage{chngcntr}
+\usepackage{makecell}
+\usepackage{booktabs, threeparttable}
+\usepackage{lipsum}
 %\usepackage{enumerate}
 %\usepackage{wasysym}
 %\newcounter{MYtempeqncnt}
@@ -67,7 +70,12 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
-
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
 \lstset{
 	%language=C,
 	frame=single, 
@@ -78,6 +86,9 @@
 \usepackage{stackengine}
 \usepackage{scalerel}
 \usepackage{graphicx}
+\usepackage{tabularx, ragged2e}
+\newcolumntype{C}{>{ \Centering \arraybackslash}X} %
+\frenchspacing
 \newlength\lthk
 \setlength\lthk{.1ex}
 \def\bline{\rule{2ex}{\lthk}}
@@ -163,7 +174,7 @@
 	\renewcommand{\thefigure}{\theenumi}
 	\renewcommand{\thetable}{\theenumi}
 	\begin{abstract}
-		In this document, we demonstrate the usage of rank nullity theorem.
+		In this document, we solve for rank, basis and dimension of the column space of a matrix.
 	\end{abstract}
 	%Download all python codes from 
 	%\begin{lstlisting}
@@ -186,24 +197,56 @@ Then which one of the following is correct
 \item $\vec{S}= \cbrak{(1, 1, 1, 0), (1, 1, 0, 1)}$ is a basis of $N(\vec{A})$
 \end{enumerate}
 \section{Solution}
-From the rank nullity theorem we know that,
-\begin{align}
-	dim(\vec{R}) = rank(\vec{A}) + dim(N(\vec{A})) \label{eq:eq1}
-\end{align}
 The nullspace is given by 
 \begin{align}
 	\myvec{1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0}\myvec{x\\y\\z\\w} = \myvec{0 \\ 0 \\ 0 \\ 0}
 \end{align}	
-The nullspace is defined as the solution space of two equations $x + y + z = 0$ and $x + y + w = 0$ in 4 variables $x, y, z$ and $w$. Thus there are 2 free variables and hence we have,
+Row reducing the above matrix we get,
 \begin{align}
-	dim(N(\vec{A})) = 2
+	\myvec{1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0}
+	\xleftrightarrow[R_2 \leftarrow R_2 \times -1]{R_2 \leftarrow R_2 - R_1}
+	\myvec{1 & 1 & 1 & 0 \\ 0 & 0 & 1 & -1\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0}\\
+	\xleftrightarrow{R_1 \leftarrow R_1- R_2}
+	\myvec{1 & 1 & 0 & 1 \\ 0 & 0 & 1 & -1\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0} \label{eq:rref}
 \end{align}
-Using \eqref{eq:eq1}, we get
-\begin{align}
-	rank(\vec{A}) = 2 \quad [\because dim(\vec{R}) = 4]
-\end{align}
-Hence we get,
-\begin{align}
-	dim(C(\vec{A})) = 2 \quad [\because dim(C(\vec{A})) = rank(\vec{A})]
-\end{align}
+\section{Answers for different cases}
+\pagebreak
+\myemptypage
+\begin{table}[h]
+	\begin{tabular}{|m{4.5cm}|l|}
+		\hline
+		&\\
+		dim(C$(\vec{A})) = 1$ 
+		& \textbf{False}. Because the number of pivot variables are 2 as obtained in \eqref{eq:rref}\\
+		&\\
+		\hline
+		&\\
+		dim(C$(\vec{A})) = 2$
+		& \textbf{True}. Since the number of pivot variables are 2, the rank of $\vec{A}$ is 2.\\
+		&$\therefore dim(C(\vec{A})) = 2 \quad [\because dim(C(\vec{A})) = rank(\vec{A})]$ \\
+		&\\
+		\hline
+		&\\
+	     rank$(\vec{A}) = 1$
+		& \textbf{False}. Because the rank$(\vec{A}) = 2$, as the number of pivot variables are 2\\
+		&\\
+		\hline
+		&\\
+		$\vec{S}$ = $\cbrak{(1, 1, 1, 0), (1, 1, 0, 1)}$ is a basis of $N(\vec{A})$
+		& \textbf{False}. \\
+		& Using \eqref{eq:rref}, we get \\
+		&$x + y + w = 0 ; z - w = 0$ \\
+		& and\\
+		& let $y = s, z = t$ as they are free variables.\\ 
+		&\\
+		& Therefore we get,\\
+		&$x = -y - w \implies x = -s - t$ \\
+		& $w = z \implies w = t$\\
+		&\\
+		&$\implies \myvec{x \\ y \\ z\\ w} = \myvec{-s -t \\ s \\ t \\ t} = s \myvec{-1 \\ 1 \\ 0 \\ 0} + t \myvec{-1 \\ 0 \\ 1 \\ 1}$\\
+		& $\implies  \cbrak{\myvec{-1 \\ 1 \\ 0 \\ 0} , \myvec{-1 \\ 0 \\ 1 \\ 1}}$ is the basis for $N(\vec{A})$\\
+		&\\
+		\hline
+	\end{tabular}
+\end{table}
 \end{document}
