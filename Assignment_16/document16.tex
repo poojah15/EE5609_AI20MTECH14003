@@ -234,18 +234,13 @@ Row reducing the above matrix we get,
 		&\\
 		$\vec{S}$ = $\cbrak{(1, 1, 1, 0), (1, 1, 0, 1)}$ is a basis of $N(\vec{A})$
 		& \textbf{False}. \\
-		& Using \eqref{eq:rref}, we get \\
-		&$x + y + w = 0 ; z - w = 0$ \\
-		& and\\
-		& let $y = s, z = t$ as they are free variables.\\ 
-		&\\
-		& Therefore we get,\\
-		&$x = -y - w \implies x = -s - t$ \\
-		& $w = z \implies w = t$\\
-		&\\
-		&$\implies \myvec{x \\ y \\ z\\ w} = \myvec{-s -t \\ s \\ t \\ t} = s \myvec{-1 \\ 1 \\ 0 \\ 0} + t \myvec{-1 \\ 0 \\ 1 \\ 1}$\\
-		& $\implies  \cbrak{\myvec{-1 \\ 1 \\ 0 \\ 0} , \myvec{-1 \\ 0 \\ 1 \\ 1}}$ is the basis for $N(\vec{A})$\\
-		&\\
+		& Let, \\
+		&  $\vec{u} = \myvec{1\\1\\1\\0}, \vec{v} = \myvec{1\\1\\0\\1}$\\ 
+		&Consider, \\
+		&$\myvec{1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0}\myvec{1\\1\\1\\0} = \myvec{3\\2\\0\\0} \not = \myvec{0\\0\\0\\0}$\\
+		& Similarly,\\
+		&$\myvec{1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0}\myvec{1\\1\\0\\1} = \myvec{2\\3\\0\\0} \not = \myvec{0\\0\\0\\0}$ \\
+		&Hence, the given vectors do not form the basis.\\
 		\hline
 	\end{tabular}
 \end{table}
